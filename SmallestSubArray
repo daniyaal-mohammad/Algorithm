@@ -1,0 +1,25 @@
+//code
+import java.util.Scanner;
+
+public class LengthOfSmallestSubArray {
+    public static void main(String args[]){
+    int N, S;
+    int sum = 0;
+
+    int count=0;
+    Scanner scan = new Scanner(System.in);
+
+    N = scan.nextInt();
+    S = scan.nextInt();
+
+
+    for (int i = 0; i<N ; i++) {
+        sum += N-i;
+        count++;
+        if (sum > S)
+            break;
+    }
+        System.out.println(count);
+}
+}
+
