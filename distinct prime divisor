@@ -1,0 +1,30 @@
+import java.util.*;
+public class primeFactor{
+    static Vector<Integer> primefactors(int n){
+        Vector<Integer> prime=new Vector<Integer>();
+        if(n%2==0) prime.add(2);
+        while(n%2==0) n/=2;
+        for(int i=3;i*i<=n;i+=2){
+            if(n%i==0) prime.add(i);
+            while(n%i==0){
+                n/=i;
+            }
+        }
+        if(n>2) prime.add(n);
+        return prime;
+    }
+    static void checkprime(int n){
+        Vector<Integer> prime=primefactors( n);
+        int product=1;
+        for(int key:prime){
+            product*=key;
+        }
+        if(product==n) System.out.println("Yes");
+        else System.out.println("NO");
+    }
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+        checkprime(n);
+    }
+}
