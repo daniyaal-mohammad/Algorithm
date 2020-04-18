@@ -1,0 +1,20 @@
+import java.util.*;
+public class gcd{
+    public static int gcd(int a,int b){
+        if(a==0) return b;
+        return gcd(b%a,a);
+    }
+    public static int lcm(int a,int b){
+        return (a*b)/gcd(a,b);
+    }
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int a=scan.nextInt();
+        int b=scan.nextInt();
+        int Gcd=gcd(a,b);
+        int Lcm=lcm(a,b);
+        System.out.println(Gcd);
+        System.out.println(Lcm);
+        
+    }
+}
