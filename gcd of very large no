@@ -1,0 +1,19 @@
+import java.util.*;
+public class gcdLarge{
+    static int gcd(int a,int result){
+        if(a==0) return result;
+        return gcd(result%a,a);
+    }
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int a=scan.nextInt();
+        String b=scan.next();
+        int result=0;
+        for(int i=0;i<b.length();i++){
+            result=(result*10+b.charAt(i)-'0')%a;
+        }
+        int rans=gcd(a,result);
+        System.out.println(rans);
+        
+    }
+}
