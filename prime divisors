@@ -1,0 +1,27 @@
+import java.util.*;
+public class divisors{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+             int A[]=new int[10000];
+             int j=0;
+        while(n%2==0){
+            n/=2;
+             A[j++]=2;
+        }
+            for(int i=3;i*i<=n;i+=2){
+                while(n%i==0){
+                    A[j++]=i;
+                    n/=i;
+                }
+            }
+        if(n>2){
+          A[j++]=n;  
+        }
+        for(int i=0;i<A.length;i++){
+            if(A[i]!=0){
+                System.out.print(A[i]+" ");
+            }
+        }
+    }
+}
